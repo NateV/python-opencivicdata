@@ -1,9 +1,14 @@
 # Changelog
 
+## Unreleased
+
+* Add a --sync flag to the loaddivisions management command, to delete divisions that are in the DB but not the CSV, even if the DB contains the CSV. This flag is relevant if you synchronize with a single CSV.
+
 ## 3.3.0 (2023-05-08)
 
 * Add last_seen field to database objects
 * Pupa now has "pupa clean" CLI command
+* Change behavior of loaddivisions management command to do nothing if the DB contains the CSV. This means divisions that are in the DB but not the CSV are not deleted. This makes it easier to load multiple CSVs, but harder to synchronize with a single CSV.
 
 ## 3.2.0 (2020-03-26)
 
